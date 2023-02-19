@@ -6,7 +6,9 @@ node {
 	}
 
 	stage('Build image') {
+		echo "inside build image stage"
 		app = docker.build("${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
+		echo "build image stage exited"
 	}
 
 	stage('Push image') {
